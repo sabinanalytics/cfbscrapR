@@ -11,9 +11,9 @@
 #' @examples
 #'
 #'
-#' cfb_fpi_ranking(season=2018)
+#' cfb_ratings_fpi(season=2018)
 
-cfb_fpi_ranking <- function(season = 2019) {
+cfb_ratings_fpi <- function(season = 2019) {
   current_year <- as.double(substr(Sys.Date(), 1, 4))
 
   # Small error handling to guide the limits on years
