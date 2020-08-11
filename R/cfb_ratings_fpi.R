@@ -1,6 +1,5 @@
-#' Get FPI historical rating data (only end of season -- all that really matters for now)
+#' Get FPI historical rating data (most recent of each season)
 #'
-#' If conference is provided Get average S&P+ historical rating data by conference
 #'
 #'
 #' @param season Year
