@@ -1,8 +1,8 @@
-#' Get FPI historical rating data (most recent of each season)
+#' Get FPI historical rating data (most recent of each year)
 #'
 #'
 #'
-#' @param season Year
+#' @param year Year
 #'
 #' @keywords internal
 #' @importFrom jsonlite "fromJSON"
@@ -11,24 +11,24 @@
 #' @examples
 #'
 #'
-#' cfb_ratings_fpi(season=2018)
+#' cfb_ratings_fpi(year=2018)
 
-cfb_ratings_fpi <- function(season = 2019) {
+cfb_ratings_fpi <- function(year = 2019) {
   current_year <- as.double(substr(Sys.Date(), 1, 4))
 
   # Small error handling to guide the limits on years
-  if (!dplyr::between(as.numeric(season), 2004, current_year)) {
-    stop(paste("Please choose season between 2004 and", current_year))
+  if (!dplyr::between(as.numeric(year), 2004, current_year)) {
+    stop(paste("Please choose year between 2004 and", current_year))
   }
 
   # Add message according to totals or weeks
   message(
-      glue::glue("Scraping FPI totals for {season}!")
+      glue::glue("Scraping FPI totals for {year}!")
   )
 # Base URL
   fpi_full_url <- "http://site.web.api.espn.com/apis/fitt/v3/sports/football/college-football/powerindex?region=us&lang=en"
 
-  url <- glue::glue("{fpi_full_url}&season={season}&limit=200")
+  url <- glue::glue("{fpi_full_url}&season={year}&limit=200")
 
   raw_json_fpi = fromJSON(url)
 
@@ -56,8 +56,8 @@ cfb_ratings_fpi <- function(season = 2019) {
       "win_6", "win_div", "playoff", "nc_game", "nc_win",
       "win_conf", "w", "l", "t"
     )) %>%
-    dplyr::mutate(season = season) %>%
+    dplyr::mutate(year = year) %>%
     dplyr::mutate_at(vars(win_out:win_conf), ~ as.double(str_remove(., "%"))/100 ) %>%
     dplyr::mutate_at(vars(id, fpi:t), as.double) %>%
-    dplyr::select(season, dplyr::everything())
+    dplyr::select(year, dplyr::everything())
 }
