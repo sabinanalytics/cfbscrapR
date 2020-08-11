@@ -3,15 +3,13 @@
 \name{cfb_play_types}
 \alias{cfb_play_types}
 \title{College Football Mapping for Play Types}
-\format{
-A data frame with 45 rows and 3 variables:
+\format{A data frame with 45 rows and 3 variables:
 \describe{
   \item{id}{Referencing play id}
   \item{text}{play type description}
   \item{abberivation}{play type abberivation used for function call}
   ...
-}
-}
+}}
 \source{
 \url{https://api.collegefootballdata.com/play/types}
 }

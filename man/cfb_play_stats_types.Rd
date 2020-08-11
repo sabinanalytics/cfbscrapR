@@ -3,14 +3,12 @@
 \name{cfb_play_stats_types}
 \alias{cfb_play_stats_types}
 \title{College Football Mapping for Play Stats Types}
-\format{
-A data frame with 22 rows and 2 variables:
+\format{A data frame with 22 rows and 2 variables:
 \describe{
   \item{id}{Referencing play id}
   \item{name}{Type of play stats}
   ...
-}
-}
+}}
 \usage{
 cfb_play_stats_types()
 }

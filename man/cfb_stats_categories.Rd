@@ -3,13 +3,11 @@
 \name{cfb_stats_categories}
 \alias{cfb_stats_categories}
 \title{College Football Mapping for Stats Categories}
-\format{
-A data.frame with 38 values:
+\format{A data.frame with 38 values:
 \describe{
   \item{name}{Statistics Categories}
   ...
-}
-}
+}}
 \usage{
 cfb_stats_categories()
 }

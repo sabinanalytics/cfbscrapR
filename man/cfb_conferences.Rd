@@ -3,16 +3,14 @@
 \name{cfb_conferences}
 \alias{cfb_conferences}
 \title{CFB Conference Information}
-\format{
-A data frame with 11 rows and 4 variables:
+\format{A data frame with 11 rows and 4 variables:
 \describe{
   \item{id}{Referencing conference id}
   \item{name}{Conference name}
   \item{long_name}{Long name for Conference}
   \item{abbreviation}{Conference abbreviation}
   ...
-}
-}
+}}
 \source{
 \url{https://api.collegefootballdata.com/conferences}
 }
